@@ -1,0 +1,8 @@
+- name: Deploy DevOps application
+  hosts: local
+  connection: local
+  tasks:
+    - name: Build and start application with Docker Compose
+      community.docker.docker_compose_v2:
+        project_src: "{{ playbook_dir }}/../docker"
+        state: present
